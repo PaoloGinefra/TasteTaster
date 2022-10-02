@@ -12,6 +12,3 @@ def getUrl(word):
 
 if __name__ == '__main__':
     print(getUrl('Plant'))
-
-    # for img in soup.find_all('img'):
-    #    print(img['src'])
