@@ -5,7 +5,7 @@ from imageDownloader import getUrl
 import pandas as pd
 import numpy as np
 
-OBJECTS_NUMBER = 50
+OBJECTS_NUMBER = 10
 
 # Imports, shuffles and selects the food names
 data = pd.read_csv('./foods.csv')
@@ -49,7 +49,7 @@ with open('./index.css') as css:
                 with gr.Row():
                     url = getUrl(obj)
                     with gr.Column(scale=0.25):
-                        image = gr.Image(url, shape=(100, None))
+                        image = gr.Image(url, height=100)
 
                     with gr.Column():
                         gr.Markdown(f'## {i+1}-' + obj)
@@ -76,4 +76,4 @@ with open('./index.css') as css:
             for i in inputs:
                 i.change(analyze, inputs, outputs)
 
-    demo.launch()
+    demo.launch(share=True)
